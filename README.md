@@ -160,7 +160,7 @@ Connect to [http://127.0.0.1:3000/](http://127.0.0.1:3000/) in your browser.
 
 If you find this application useful, please consider donating.
 
-BTC: ``1Fi7YbpTYjHynUqbh1vwPcAqAqwQzeC1gw``
+BTC: ``1KQU3px4VReTwo8gWPdjkqJiLktpdRyP8h``
 
 ## License
 
