@@ -28,7 +28,7 @@
         $('#updated').addClass('updating').text('Updating...');
         $('title').text('Updating...');
 
-        $('#manager').load('#{root_url}', function() {
+        $('#manager').load('#{root_path}', function() {
           now = new Date();
           current_time = formatUpdatedAt(now);
 

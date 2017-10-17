@@ -1,14 +1,14 @@
 #miner-show
   #prev-next-miner
     - if @miner_id > 0
-      .left= link_to raw("&laquo; Previous Miner"), miner_url(@miner_id - 1)
+      .left= link_to raw("&laquo; Previous Miner"), miner_path(@miner_id - 1)
     - if @miner_id < @miner_pool.miners.count - 1
-      .right= link_to raw("Next Miner &raquo;"), miner_url(@miner_id + 1)
+      .right= link_to raw("Next Miner &raquo;"), miner_path(@miner_id + 1)
     .clear
 
   - unless @miner.nil? || !@miner.available?
     - content_for(:page_title) do
-      = link_to("CgminerManager", root_url) + ' > ' + @miner.host + ':' + @miner.port.to_s
+      = link_to("CgminerManager", root_path) + ' > ' + @miner.host + ':' + @miner.port.to_s
 
     = render partial: 'shared/warnings'
 
@@ -35,7 +35,7 @@
         $('#updated').addClass('updating').text('Updating...');
         $('title').text('Updating...');
 
-        $('#miner-show').load('#{miner_url(@miner_id)}', function() {
+        $('#miner-show').load('#{miner_path(@miner_id)}', function() {
           $('#updated').removeClass('updating').html("<b>Updated:</b> <span>#{Time.zone.now.strftime("%H:%M:%S")}</span>");
           $('title').text('#{Rails.application.class.parent_name}');
         });
